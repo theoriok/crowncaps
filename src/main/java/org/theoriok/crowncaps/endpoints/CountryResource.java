@@ -6,7 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.theoriok.crowncaps.model.Country;
+import org.theoriok.crowncaps.dto.CountryDto;
 import org.theoriok.crowncaps.service.CountryService;
 
 import java.util.List;
@@ -21,8 +21,8 @@ public class CountryResource {
             produces = MediaType.APPLICATION_JSON_VALUE,
             method = RequestMethod.GET
     )
-    public ResponseEntity<List<Country>> getCountries() {
-        List<Country> countries = countryService.findAllCountries();
+    public ResponseEntity<List<CountryDto>> getCountries() {
+        List<CountryDto> countries = countryService.findAllCountries();
         return ResponseEntity.ok(countries);
     }
 

@@ -1,13 +1,13 @@
 package org.theoriok.crowncaps.service;
 
-import org.theoriok.crowncaps.model.Cap;
+import org.theoriok.crowncaps.dto.CapDto;
 
 import java.util.List;
 
 public interface CapService {
-    List<Cap> findAllCaps();
+    List<CapDto> findAllCaps();
 
-    List<Cap> findByCountryCode(String country);
+    List<CapDto> findByCountryCode(String country);
 
-    List<Cap> findByCategoryName(String category);
+    List<CapDto> findByCategoryName(String category);
 }

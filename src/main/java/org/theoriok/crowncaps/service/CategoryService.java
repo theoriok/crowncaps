@@ -1,9 +1,9 @@
 package org.theoriok.crowncaps.service;
 
-import org.theoriok.crowncaps.model.Category;
+import org.theoriok.crowncaps.dto.CategoryDto;
 
 import java.util.List;
 
 public interface CategoryService {
-    List<Category> findAllCategories();
+    List<CategoryDto> findAllCategories();
 }

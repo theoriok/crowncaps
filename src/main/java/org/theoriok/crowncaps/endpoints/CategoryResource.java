@@ -6,7 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.theoriok.crowncaps.model.Category;
+import org.theoriok.crowncaps.dto.CategoryDto;
 import org.theoriok.crowncaps.service.CategoryService;
 
 import java.util.List;
@@ -21,8 +21,8 @@ public class CategoryResource {
             produces = MediaType.APPLICATION_JSON_VALUE,
             method = RequestMethod.GET
     )
-    public ResponseEntity<List<Category>> getCategories() {
-        List<Category> categories = categoryService.findAllCategories();
+    public ResponseEntity<List<CategoryDto>> getCategories() {
+        List<CategoryDto> categories = categoryService.findAllCategories();
         return ResponseEntity.ok(categories);
     }
 }

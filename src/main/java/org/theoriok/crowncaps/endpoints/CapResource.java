@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.theoriok.crowncaps.model.Cap;
+import org.theoriok.crowncaps.dto.CapDto;
 import org.theoriok.crowncaps.service.CapService;
 
 import java.util.List;
@@ -22,8 +22,8 @@ public class CapResource {
             produces = MediaType.APPLICATION_JSON_VALUE,
             method = RequestMethod.GET
     )
-    public ResponseEntity<List<Cap>> getCaps() {
-        List<Cap> caps = capService.findAllCaps();
+    public ResponseEntity<List<CapDto>> getCaps() {
+        List<CapDto> caps = capService.findAllCaps();
         return ResponseEntity.ok(caps);
     }
 
@@ -32,8 +32,8 @@ public class CapResource {
             produces = MediaType.APPLICATION_JSON_VALUE,
             method = RequestMethod.GET
     )
-    public ResponseEntity<List<Cap>> getCapsByCountry(@PathVariable(value = "country") String country) {
-        List<Cap> caps = capService.findByCountryCode(country);
+    public ResponseEntity<List<CapDto>> getCapsByCountry(@PathVariable(value = "country") String country) {
+        List<CapDto> caps = capService.findByCountryCode(country);
         return ResponseEntity.ok(caps);
     }
 
@@ -42,8 +42,8 @@ public class CapResource {
             produces = MediaType.APPLICATION_JSON_VALUE,
             method = RequestMethod.GET
     )
-    public ResponseEntity<List<Cap>> getCapsByCategory(@PathVariable(value = "category") String category) {
-        List<Cap> caps = capService.findByCategoryName(category);
+    public ResponseEntity<List<CapDto>> getCapsByCategory(@PathVariable(value = "category") String category) {
+        List<CapDto> caps = capService.findByCategoryName(category);
         return ResponseEntity.ok(caps);
     }
 }

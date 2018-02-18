@@ -1,9 +1,9 @@
 package org.theoriok.crowncaps.service;
 
-import org.theoriok.crowncaps.model.Country;
+import org.theoriok.crowncaps.dto.CountryDto;
 
 import java.util.List;
 
 public interface CountryService {
-    List<Country> findAllCountries();
+    List<CountryDto> findAllCountries();
 }
