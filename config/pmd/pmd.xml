@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         locationName="Conundra ruleset"
+         xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+         xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 http://pmd.sourceforge.net/ruleset_xml_schema.xsd"
+         xsi:noNamespaceSchemaLocation="http://pmd.sourceforge.net/ruleset_xml_schema.xsd">
+    <description>
+        Conundra's PMD
+    </description>
+    <rule ref="rulesets/java/naming.xml/AvoidDollarSigns"/>
+    <rule ref="rulesets/java/naming.xml/AvoidFieldNameMatchingMethodName"/>
+    <rule ref="rulesets/java/naming.xml/AvoidFieldNameMatchingTypeName"/>
+    <rule ref="rulesets/java/naming.xml/BooleanGetMethodName"/>
+    <rule ref="rulesets/java/naming.xml/ClassNamingConventions"/>
+    <rule ref="rulesets/java/naming.xml/LongVariable">
+        <properties>
+            <property locationName="minimum" value="50"/>
+        </properties>
+    </rule>
+    <rule ref="rulesets/java/naming.xml/MethodNamingConventions"/>
+    <rule ref="rulesets/java/naming.xml/MethodWithSameNameAsEnclosingClass"/>
+    <rule ref="rulesets/java/naming.xml/MisleadingVariableName"/>
+    <rule ref="rulesets/java/naming.xml/NoPackage"/>
+    <rule ref="rulesets/java/naming.xml/PackageCase"/>
+    <rule ref="rulesets/java/naming.xml/ShortMethodName"/>
+    <rule ref="rulesets/java/naming.xml/ShortVariable">
+        <properties>
+            <property locationName="xpath">
+                <value>
+                    //VariableDeclaratorId[(string-length(@Image) &lt; 3) and (not (@Image='id')) and (not
+                    (@Image='to')) and (not (@Image='o')) and (not (@Image='ex')) and (not(@Image='x')) and
+                    (not(@Image='y'))]
+                    [not(ancestor::ForInit)]
+                    [not((ancestor::FormalParameter) and (ancestor::TryStatement))]
+                    [not(ancestor::ForStatement)]
+                </value>
+            </property>
+        </properties>
+    </rule>
+    <rule ref="rulesets/java/naming.xml/SuspiciousConstantFieldName"/>
+    <rule ref="rulesets/java/naming.xml/SuspiciousEqualsMethodName"/>
+    <rule ref="rulesets/java/naming.xml/SuspiciousHashcodeMethodName"/>
+    <rule ref="rulesets/java/logging-java.xml/SystemPrintln"/>
+    <rule ref="rulesets/java/naming.xml/VariableNamingConventions"/>
+</ruleset>
