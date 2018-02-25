@@ -25,5 +25,4 @@ public class CountryResource {
         List<CountryDto> countries = countryService.findAllCountries();
         return ResponseEntity.ok(countries);
     }
-
 }
